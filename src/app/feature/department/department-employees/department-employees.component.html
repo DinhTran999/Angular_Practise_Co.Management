@@ -1,0 +1,34 @@
+<div class="departments">
+    <div *ngIf="department">
+        <h2>Details of Department {{department.name | uppercase}}</h2>
+        <div>id: {{department.id}}</div>
+        <div>
+            <label for="department-name">Department name: </label>
+            <input id="department-name" [(ngModel)]="department.name" placeholder="name">
+        </div>
+
+        <div>
+            <label for="department-startDate">Department Start Date: </label>
+            <input id="department-startDate" [(ngModel)]="department.startDate" placeholder="Start Date">
+        </div>
+    </div>
+<div>
+    <button type="button" (click)="update()">Update</button>
+</div>
+   
+
+    <a (click)="getEmployeesByDepartmentId()"
+     style="cursor: pointer; font-style: italic;color: blue; text-decoration: underline;" >View Employee List</a>
+
+    <div *ngIf="employees&&isShowEmployeeList">
+        <div *ngIf="employees[0].departmentName">
+            <h4>List employees</h4>
+            <ul>
+                <li *ngFor="let employee of employees">
+                    <a routerLink="/employee-details" [state]="employee">{{employee.fullName}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<app-goBack></app-goBack>

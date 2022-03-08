@@ -1,0 +1,13 @@
+<div>
+    <div *ngIf="employees">
+        <h4>List of Employees</h4>
+        <ul>
+            <li *ngFor="let employee of employees">
+                <!-- <a routerLink="/departments/{{departmentId}}/employees/{{employee.id}}">{{employee.fullName}}</a> -->
+                <a routerLink="/employee-details" [state]="employee" >{{employee.fullName}}</a>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+<app-goBack></app-goBack>

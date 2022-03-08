@@ -1,0 +1,29 @@
+.departments a {
+    color: #333;
+    text-decoration: none;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    width: 30%;
+  }
+
+  .departments a:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+  }
+
+  button.delete {
+    background-color: white;
+    color:  #525252;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 1px 10px 3px 10px;
+    display: inline;
+  }
+  
+  button.delete:hover {
+    background-color: #525252;
+    color: white;
+  }

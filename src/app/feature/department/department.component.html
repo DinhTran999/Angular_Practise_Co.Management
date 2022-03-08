@@ -1,0 +1,24 @@
+<div class="departments">
+    <div>
+        <label for="new-department">Department Name </label>
+        <input type="text" id="new-departmentName" #departmentName>
+        <label for="new-department">Department Start Date </label>
+        <input type="text" id="new-departmentStartdate" #departmentStartDate>
+
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button"
+            (click)="add(departmentName.value, departmentStartDate.value);departmentName.value='';departmentStartDate.value=''">Add
+            Department</button>
+
+    </div>
+    <div>
+        <h3>List of Departments</h3>
+    </div>
+    <ul>
+        <li *ngFor="let department of departments">
+            <a routerLink="/departments/{{department.id}}/employees">{{department.name}} </a>
+            <button type="button" class="delete" (click)="onDelete(department)">x</button>
+        </li>
+    </ul>
+</div>
+<app-goBack></app-goBack>
